@@ -6,39 +6,13 @@ namespace PartialClass
     {
         public partial class PartialClass
         {
-            private string _firstName;
-            private string _lastName;
-
-            public string FirstName
-            {
-                get
-                {
-                    return _firstName;
-                }
-                set
-                {
-                    _firstName = value;
-                }
-            }
-            public string LastName
-            {
-                get
-                {
-                    return _lastName;
-                }
-                set
-                {
-                    _lastName = value;
-                }
-            }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
         }
 
         public partial class PartialClass
         {
-            public void FullName()
-            {
-                Console.WriteLine("Full Name: " + FirstName + " " + LastName);
-            }
+            public string FullName => $"{FirstName} {LastName}";
         }
 
         static void Main(string[] args)
@@ -54,8 +28,7 @@ namespace PartialClass
                 FirstName = "Stuart",
                 LastName = "Shepherd"
             };
-            partialClass.FullName();
-
+            Console.WriteLine(partialClass.FullName);
             Console.ReadLine();
         }
     }
